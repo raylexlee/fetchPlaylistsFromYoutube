@@ -1,0 +1,18 @@
+{
+  "name": "fetchPlaylistsfromYoutube",
+  "version": "1.0.0",
+  "description": "Fetch Playlists from a youtube user's playlist",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "playlist",
+    "youtube"
+  ],
+  "author": "Raylex Lee",
+  "license": "ISC",
+  "dependencies": {
+    "sync-request": "^6.1.0"
+  }
+}
