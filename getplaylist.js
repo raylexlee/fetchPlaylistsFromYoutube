@@ -9,12 +9,12 @@ const syncRequest = require('sync-request');
 const fs = require('fs');
 const Playlist = require('./lib/getPlaylist.js')();
 const vpattern = /window\["ytInitialData"\]\s=\s(\{.*"\}\]\}\}\});/m;
-const upattern = /https:\/\/www\.youtube\.com\/(c.*)\/(.*)\/playlists/;
+const upattern = /https:\/\/www\.youtube\.com\/(.*)\/(.*)\/playlists/;
 urls.forEach(url => {
    const umatch = upattern.exec(url);
    if (umatch === null) return;
    const user = umatch[2];
-   const newChannel = (umatch[1] === 'channel');
+   const newChannel = (umatch[1] !== 'c');
    const res = syncRequest('GET', url);
    const contents = res.getBody('utf8');
    const match = vpattern.exec(contents);
